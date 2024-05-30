@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "startStorybook": "storybook dev --port 6040 --quiet",
+    "start": "storybook dev --port 6040 --quiet",
     "lint": "eslint .",
     "authenticate": "custom-dx-components authenticate",
     "buildComponent": "custom-dx-components buildComponent",
@@ -34,7 +34,7 @@
     "_lint:spelling": "cspell --no-progress **/*",
     "_lint:types": "tsc --noEmit"
   },
-    "scriptsComments": {
+  "scriptsComments": {
     "build": "tsc -b tsconfig.build.json",
     "fix": "run-p -cl fix:*",
     "fix:es": "eslint --fix .",
@@ -50,7 +50,7 @@
   "author": "",
   "license": "Enter License",
   "sideEffects": false,
- "dependencies": {
+  "dependencies": {
     "@pega/cosmos-react-condition-builder": "^4.2.0",
     "@pega/cosmos-react-core": "^4.2.0",
     "@pega/cosmos-react-work": "^4.2.0",
