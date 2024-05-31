@@ -59,7 +59,7 @@ const StyledText = styled(Text)`
 function TestExtensionsTextBgColor(props: TestExtensionsTextBgColorProps) {
   return (
     <StyledTestExtensionsTextBgColorWrapper>
-      <StyledText statusType={props.statusType}>{props.label}</StyledText>
+      <StyledText statusType={props.statusType}>{props.value}</StyledText>
     </StyledTestExtensionsTextBgColorWrapper>
   );
 }

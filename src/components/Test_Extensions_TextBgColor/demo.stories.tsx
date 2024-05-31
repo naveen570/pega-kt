@@ -65,16 +65,6 @@ export const BaseTestExtensionsTextBgColor: Story = args => {
 };
 
 BaseTestExtensionsTextBgColor.args = {
-  label: configProps.label,
-  helperText: configProps.helperText,
-  placeholder: configProps.placeholder,
-  testId: configProps.testId,
-  readOnly: configProps.readOnly,
-  disabled: configProps.disabled,
-  required: configProps.required,
-  status: configProps.status,
-  hideLabel: configProps.hideLabel,
-  displayMode: configProps.displayMode,
-  validatemessage: configProps.validatemessage,
-  statusType: 'new'
+  value: configProps.value,
+  statusType: configProps.statusType
 };
