@@ -68,5 +68,6 @@ BaseTestExtensionsTextBgColor.args = {
   value: configProps.value,
   statusType: configProps.statusType,
   colorsAvailable: configProps.colorsAvailable,
-  statusesAvailable: configProps.statusesAvailable
+  statusesAvailable: configProps.statusesAvailable,
+  pyWorkStatus: configProps.pyWorkStatus
 };
