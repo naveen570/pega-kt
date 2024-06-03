@@ -2,3 +2,6 @@ to connect pega app studio to the code
 
 server
 authenicate
+
+
+current ruleset : practice-dx
