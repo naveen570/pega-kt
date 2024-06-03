@@ -1,19 +1,12 @@
-import { Input, withConfiguration } from '@pega/cosmos-react-core';
+import { Text, withConfiguration } from '@pega/cosmos-react-core';
+import styled from 'styled-components';
 
 import type { PConnFieldProps } from './PConnProps';
-
-import StyledTestExtensionsDynamicBgChangeWrapper from './styles';
 
 // interface for props
 interface TestExtensionsDynamicBgChangeProps extends PConnFieldProps {
   // If any, enter additional props that only exist on TextInput here
-  pyStatusWork: string;
-}
-
-// interface for StateProps object
-interface StateProps {
-  value: string;
-  hasSuggestions: boolean;
+  // pyStatusWork: string;
 }
 
 // Duplicated runtime code from Constellation Design System Component
@@ -21,44 +14,25 @@ interface StateProps {
 // props passed in combination of props from property panel (config.json) and run time props from Constellation
 // any default values in config.pros should be set in defaultProps at bottom of this file
 function TestExtensionsDynamicBgChange(props: TestExtensionsDynamicBgChangeProps) {
-  const {
-    getPConnect,
-    pyStatusWork,
-    placeholder,
-    disabled = false,
-    readOnly = false,
-    required = false,
-    label,
-    hideLabel = false,
-    testId
-  } = props;
+  const { getPConnect } = props;
 
-  const pConn = getPConnect();
-  const actions = pConn.getActionsApi();
-  const stateProps = pConn.getStateProps() as StateProps;
-  const propName: string = stateProps.value;
-
-  const handleOnChange = (event: any) => {
-    const { value: updatedValue } = event.target;
-    actions.updateFieldValue(propName, updatedValue);
+  const statusWork = getPConnect().getValue('.pyStatusWork');
+  const possibleStatus: Record<string, string> = {
+    NEW: 'red',
+    OPEN: 'green'
   };
-
-  return (
-    <StyledTestExtensionsDynamicBgChangeWrapper>
-      <Input
-        type='text'
-        value={pyStatusWork}
-        label={label}
-        labelHidden={hideLabel}
-        placeholder={placeholder}
-        disabled={disabled}
-        readOnly={readOnly}
-        required={required}
-        onChange={handleOnChange}
-        testId={testId}
-      />
-    </StyledTestExtensionsDynamicBgChangeWrapper>
-  );
+  const currentStatus = possibleStatus[statusWork.toUpperCase()];
+  const StyledText = styled(Text)`
+    background-color: ${currentStatus};
+    padding-inline: calc(0.25rem);
+    line-height: 1rem;
+    border: 1px solid ${currentStatus};
+    border-radius: calc(0.125rem);
+    box-shadow: rgba(76, 90, 103, 0.1) 0px 0px 0px 0.0625rem inset;
+    font-weight: bold;
+    text-transform: uppercase;
+  `;
+  return <StyledText>{statusWork}</StyledText>;
 }
 
 export default withConfiguration(TestExtensionsDynamicBgChange);

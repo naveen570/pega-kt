@@ -21,7 +21,7 @@ function TestExtensionsTextBgColor(props: TestExtensionsTextBgColorProps) {
     OPEN: 'green'
   };
   const currentStatus = possibleStatus[props.pyWorkStatus.toUpperCase()];
-  const { value } = props;
+  // const { value } = props;
   // [statusType, statusesAvailable, colorsAvailable] = [
   //   statusType,
   //   statusesAvailable,
@@ -44,7 +44,7 @@ function TestExtensionsTextBgColor(props: TestExtensionsTextBgColorProps) {
   `;
   return (
     <StyledTestExtensionsTextBgColorWrapper>
-      <StyledText {...props}>{value}</StyledText>
+      <StyledText {...props}>{`${props.pyWorkStatus}-hi`}</StyledText>
     </StyledTestExtensionsTextBgColorWrapper>
   );
 }

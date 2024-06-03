@@ -28,6 +28,11 @@ export const BaseTestExtensionsDynamicBgChange: Story = args => {
 
     getPConnect: () => {
       return {
+        getValue: (property: string) => {
+          if (property.includes('pyStatusWork')) {
+            return 'NEW';
+          }
+        },
         getStateProps: () => {
           return stateProps;
         },
