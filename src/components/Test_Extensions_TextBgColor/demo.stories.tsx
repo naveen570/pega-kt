@@ -66,5 +66,7 @@ export const BaseTestExtensionsTextBgColor: Story = args => {
 
 BaseTestExtensionsTextBgColor.args = {
   value: configProps.value,
-  statusType: configProps.statusType
+  statusType: configProps.statusType,
+  colorsAvailable: configProps.colorsAvailable,
+  statusesAvailable: configProps.statusesAvailable
 };
