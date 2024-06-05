@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 export const configProps = {
   value: '',
@@ -13,10 +12,11 @@ export const configProps = {
   required: false,
   disabled: false,
   status: '',
-  validatemessage: ''
+  validatemessage: '',
+  statusesAvailable: 'new,old,closed',
+  colorsAvailable: 'red,green,blue'
 };
 
 export const stateProps = {
-  value: '.TextSample',
-  hasSuggestions: false
+  value: '.pyStatusWork'
 };

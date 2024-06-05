@@ -29,8 +29,8 @@ export const BaseTestExtensionsDynamicBgChange: Story = args => {
     getPConnect: () => {
       return {
         getValue: (property: string) => {
-          if (property.includes('pyStatusWork')) {
-            return 'NEW';
+          if (property.includes(stateProps.value)) {
+            return 'closed';
           }
         },
         getStateProps: () => {
@@ -81,5 +81,6 @@ BaseTestExtensionsDynamicBgChange.args = {
   hideLabel: configProps.hideLabel,
   displayMode: configProps.displayMode,
   validatemessage: configProps.validatemessage,
-  pyStatusWork: 'NEW'
+  statusesAvailable: configProps.statusesAvailable,
+  colorsAvailable: configProps.colorsAvailable
 };

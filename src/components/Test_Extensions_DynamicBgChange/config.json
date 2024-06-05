@@ -10,6 +10,8 @@
   "type": "Field",
   "subtype": "Text",
   "properties": [
+    { "name": "statusesAvailable", "label": "List All Statuses", "format": "TEXT" },
+    { "name": "colorsAvailable", "label": "List All Color Options", "format": "TEXT" },
     {
       "name": "label",
       "label": "Label value",
@@ -50,6 +52,5 @@
       ]
     }
   ],
-  "defaultConfig": {
-  }
+  "defaultConfig": {}
 }
