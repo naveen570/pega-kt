@@ -30,7 +30,10 @@ function TestExtensionsDynamicBgChange(props: TestExtensionsDynamicBgChangeProps
   const statuses: Array<string> = statusesAvailable.split(',');
 
   const stateName = (getPConnect().getStateProps() as StateProps).value;
-  const currentValue = getPConnect().getValue(stateName) ?? '';
+  const currentValue = getPConnect().getValue(stateName);
+  if (currentValue === null || currentValue === undefined || currentValue.length === 0) {
+    return <Text>--</Text>;
+  }
   const statusColor: string = colors[statuses.indexOf(currentValue.toLowerCase())] ?? 'grey';
 
   // const statusColorMapping = colors.map((color, index) => {
