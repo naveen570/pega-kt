@@ -26,6 +26,7 @@ function TestExtensionsDynamicBgChange(props: TestExtensionsDynamicBgChangeProps
     }
     return '';
   });
+  console.log(getPConnect().getCurrentClassID());
   const colors: Array<string> = colorsAvailable.split(',');
   const statuses: Array<string> = statusesAvailable.split(',');
 
@@ -56,6 +57,7 @@ function TestExtensionsDynamicBgChange(props: TestExtensionsDynamicBgChangeProps
     box-shadow: rgba(76, 90, 103, 0.1) 0px 0px 0px 0.0625rem inset;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: max(0.75rem, 12px);
   `;
   return <StyledText>{currentValue}</StyledText>;
 }

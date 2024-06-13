@@ -1,0 +1,56 @@
+{
+  "name": "Test_Extensions_ClickableText",
+  "label": "Clickable Text",
+  "description": "Clickable Text",
+  "organization": "Test",
+  "version": "1.0.0",
+  "library": "Extensions",
+  "allowedApplications": [],
+  "componentKey": "Test_Extensions_DynamicBgChange",
+  "type": "Field",
+  "subtype": "Text",
+  "properties": [
+    { "name": "statusesAvailable", "label": "List All Statuses", "format": "TEXT" },
+    { "name": "colorsAvailable", "label": "List All Color Options", "format": "TEXT" },
+    {
+      "name": "label",
+      "label": "Label value",
+      "format": "TEXT"
+    },
+    {
+      "name": "placeholder",
+      "label": "Placeholder",
+      "format": "TEXT"
+    },
+    {
+      "name": "visibility",
+      "label": "Visible",
+      "format": "VISIBILITY"
+    },
+    {
+      "name": "disabled",
+      "label": "Disabled",
+      "format": "DISABLED"
+    },
+    {
+      "name": "required",
+      "label": "Required",
+      "format": "REQUIRED"
+    },
+    {
+      "label": "Advanced",
+      "format": "GROUP",
+      "collapsible": true,
+      "properties": [
+        {
+          "name": "testId",
+          "label": "Test ID",
+          "format": "TEXT",
+          "ignorePattern": "[^-_\\p{N}\\p{L}]",
+          "includeAnnotations": false
+        }
+      ]
+    }
+  ],
+  "defaultConfig": {}
+}
